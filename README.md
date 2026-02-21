@@ -1,50 +1,159 @@
-# Welcome to your Expo app 👋
+# 🍔 food-delivery-app
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A modern **React Native (Expo)** food delivery application built with **TypeScript**, featuring authentication, cart management, search, filtering, and a clean mobile UI.
 
-## Get started
+This project demonstrates real-world mobile app architecture using state management, backend integration, and reusable UI components.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## 📱 Features
 
-2. Start the app
+* 🔐 User Authentication (Sign In / Sign Up)
+* 🏠 Home screen with featured food items
+* 🔎 Search functionality
+* 🧩 Category filtering
+* 🛒 Add to cart & remove from cart
+* ➕ Increase / decrease item quantity
+* 👤 User profile screen
+* 🎨 Clean UI with custom reusable components
+* ⚡ Global state management
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 🛠 Tech Stack
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+* **React Native (Expo)**
+* **TypeScript**
+* **Expo Router**
+* **NativeWind (Tailwind CSS for React Native)**
+* **Zustand (State Management)**
+* **Appwrite (Backend & Authentication)**
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## 📂 Project Structure
 
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+app/
+ ├── (auth)/          # Authentication screens
+ ├── (tabs)/          # Main tab navigation screens
+ ├── _layout.tsx      # Root layout
+components/           # Reusable UI components
+constants/            # App constants
+lib/                  # Backend & utility functions
+store/                # Zustand state stores
+assets/               # Fonts, icons, images
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## ⚙️ Installation & Setup
 
-To learn more about developing your project with Expo, look at the following resources:
+### 1️⃣ Clone the repository
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+git clone https://github.com/your-username/food-delivery-app.git
+cd food-delivery-app
+```
 
-## Join the community
+### 2️⃣ Install dependencies
 
-Join our community of developers creating universal apps.
+```bash
+npm install
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+or
+
+```bash
+yarn install
+```
+
+### 3️⃣ Configure Environment Variables
+
+Create a `.env` file in the root directory and add your Appwrite configuration:
+
+```
+EXPO_PUBLIC_APPWRITE_ENDPOINT=your_endpoint
+EXPO_PUBLIC_APPWRITE_PROJECT_ID=your_project_id
+EXPO_PUBLIC_APPWRITE_DATABASE_ID=your_database_id
+EXPO_PUBLIC_APPWRITE_USER_COLLECTION_ID=your_user_collection_id
+```
+
+Make sure your backend is properly configured.
+
+### 4️⃣ Start the development server
+
+```bash
+npx expo start
+```
+
+Then scan the QR code using Expo Go or run on an emulator.
+
+---
+
+## 🧠 State Management
+
+The app uses **Zustand** for global state handling:
+
+* `auth.store.ts` → Handles authentication state
+* `cart.store.ts` → Manages cart items and quantities
+
+---
+
+## 🎨 UI & Styling
+
+* Styled using **NativeWind (Tailwind CSS for React Native)**
+* Custom reusable components:
+
+  * `CustomButton`
+  * `CustomInput`
+  * `MenuCard`
+  * `CartItem`
+  * `SearchBar`
+  * `Filter`
+  * `CustomHeader`
+
+---
+
+## 🔥 Backend Integration
+
+The app integrates with **Appwrite** for:
+
+* User authentication
+* Database operations
+* Data fetching & seeding
+
+Backend logic is located inside:
+
+```
+lib/appwrite.ts
+lib/useAppwrite.ts
+lib/data.ts
+lib/seed.ts
+```
+
+---
+
+## 📸 Screens Included
+
+* Authentication (Sign In / Sign Up)
+* Home
+* Search
+* Cart
+* Profile
+
+---
+
+## 🚀 Future Improvements
+
+* Payment gateway integration
+* Order history
+* Push notifications
+* Admin dashboard
+* Dark mode support
+
+---
+
+## 👩‍💻 Author
+
+Built as a mobile food delivery application project to demonstrate modern React Native development practices.
